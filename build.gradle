@@ -1,0 +1,42 @@
+
+buildscript {
+
+}
+
+subprojects {
+    apply plugin: 'maven'
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+        mavenCentral()
+    }
+
+
+    sourceCompatibility = 11
+    targetCompatibility = 11
+
+    ext {
+        springVersion = '2.1.6.RELEASE'
+        lombokVersion = '1.18.4'
+        mapstructVersion = '1.2.0.Final'
+    }
+
+    dependencies {
+        compile 'org.slf4j:jul-to-slf4j:1.7.25'
+        compile "com.google.guava:guava:28.0-jre",
+                "org.projectlombok:lombok:${lombokVersion}",
+                "org.mapstruct:mapstruct-jdk8:${mapstructVersion}"
+
+        annotationProcessor "org.projectlombok:lombok:${lombokVersion}",
+                "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+
+
+        constraints {
+            implementation 'com.google.code.gson:gson:2.8.5'
+        }
+    }
+
+}
