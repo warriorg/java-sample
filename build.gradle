@@ -37,6 +37,7 @@ subprojects {
         constraints {
             implementation 'com.google.code.gson:gson:2.8.5'
             implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.9'
+            implementation 'cglib:cglib:3.2.12'
         }
     }
 
