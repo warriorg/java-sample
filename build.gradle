@@ -23,6 +23,7 @@ subprojects {
         lombokVersion = '1.18.4'
         mapstructVersion = '1.2.0.Final'
         kafkaVersion = '2.3.0'
+        dubboVersion = '2.7.3'
     }
 
     dependencies {
@@ -41,7 +42,19 @@ subprojects {
             implementation 'cglib:cglib:3.2.12'
             implementation "org.apache.kafka:kafka-clients:$kafkaVersion"
             implementation "org.apache.kafka:kafka-streams:$kafkaVersion"
+            implementation "org.apache.dubbo:dubbo:${dubboVersion}"
         }
     }
+}
 
+project(":dubbo-consumer") {
+    dependencies {
+        compile project(':dubbo-api')
+    }
+}
+
+project(":dubbo-provider") {
+    dependencies {
+        compile project(':dubbo-api')
+    }
 }
