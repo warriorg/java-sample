@@ -47,14 +47,15 @@ subprojects {
     }
 }
 
-project(":dubbo-consumer") {
+project("dubbo:dubbo-provider") {
     dependencies {
-        compile project(':dubbo-api')
+        compile project(':dubbo:dubbo-api')
     }
 }
 
-project(":dubbo-provider") {
+project("dubbo:dubbo-consumer") {
     dependencies {
-        compile project(':dubbo-api')
+        compile project(':dubbo:dubbo-api')
     }
 }
+

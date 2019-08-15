@@ -5,7 +5,7 @@ include 'design-pattern'
 include 'java-basic'
 include 'java-kafka'
 
-include 'dubbo-api'
-include 'dubbo-provider'
-include 'dubbo-consumer'
+include 'dubbo:dubbo-api'
+include 'dubbo:dubbo-provider'
+include 'dubbo:dubbo-consumer'
 
