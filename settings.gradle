@@ -4,8 +4,10 @@ include 'java8'
 include 'design-pattern'
 include 'java-basic'
 include 'java-kafka'
+include 'java-web'
 
 include 'dubbo:dubbo-api'
 include 'dubbo:dubbo-provider'
 include 'dubbo:dubbo-consumer'
+include 'mybatis'
 

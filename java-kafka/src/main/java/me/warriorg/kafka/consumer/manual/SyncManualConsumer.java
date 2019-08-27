@@ -26,7 +26,7 @@ public class SyncManualConsumer extends ShutdownableThread {
         properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, IntegerDeserializer.class.getName());
         properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
 
-        this.consumer = new KafkaConsumer<Integer, String>(properties);
+        this.consumer = new KafkaConsumer<>(properties);
     }
 
     @Override

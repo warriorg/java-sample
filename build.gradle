@@ -43,6 +43,8 @@ subprojects {
             implementation "org.apache.kafka:kafka-clients:$kafkaVersion"
             implementation "org.apache.kafka:kafka-streams:$kafkaVersion"
             implementation "org.apache.dubbo:dubbo:${dubboVersion}"
+            implementation 'javax.servlet:javax.servlet-api:4.0.1'
+            implementation 'org.mybatis:mybatis:3.5.2'
         }
     }
 }
