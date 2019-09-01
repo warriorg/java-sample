@@ -34,5 +34,6 @@ gradle/
 *.iml
 bin/
 out/
+activemq-data/
 
 .DS_Store
