@@ -11,4 +11,5 @@ include 'dubbo:dubbo-provider'
 include 'dubbo:dubbo-consumer'
 include 'mybatis'
 include 'activemq'
+include 'pdfbox'
 
