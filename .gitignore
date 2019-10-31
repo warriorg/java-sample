@@ -35,5 +35,8 @@ gradle/
 bin/
 out/
 activemq-data/
+.project
+.classpath
+.settings/
 
 .DS_Store
