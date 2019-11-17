@@ -48,6 +48,9 @@ subprojects {
             implementation 'org.apache.activemq:activemq-all:5.15.9'
             implementation 'org.apache.pdfbox:pdfbox:2.0.17'
             implementation 'com.hankcs:hanlp:portable-1.7.5'
+
+            implementation 'org.elasticsearch.client:elasticsearch-rest-client:7.4.2'
+            implementation 'org.elasticsearch.client:elasticsearch-rest-high-level-client:7.4.2'
         }
     }
 }

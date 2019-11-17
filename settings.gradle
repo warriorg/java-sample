@@ -12,4 +12,5 @@ include 'dubbo:dubbo-consumer'
 include 'mybatis'
 include 'activemq'
 include 'pdfbox'
+include 'java-elasticsearch'
 
