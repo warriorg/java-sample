@@ -22,6 +22,8 @@ include 'dubbo:05-consumer-group'
 include 'dubbo:05-provider-group'
 include 'dubbo:06-consumer-mocknull'
 include 'dubbo:06-consumer-mockclass'
+include 'dubbo:06-consumer-timeout'
+include 'dubbo:06-provider-timeout'
 
 include 'mybatis'
 include 'activemq'
