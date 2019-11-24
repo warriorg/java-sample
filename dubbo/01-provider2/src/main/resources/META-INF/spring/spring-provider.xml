@@ -9,7 +9,7 @@
     <!--指定注册中心： 不使用注册中心-->
     <dubbo:registry address="N/A"/>
     <!--注册业务接口实现类， 它是真正的服务提供者-->
-    <bean id="fooService" class="me.warriorg.dubbo.service.provider.FooServiceImpl"/>
+    <bean id="fooService" class="me.warriorg.dubbo.service.provider.WechatServiceImpl"/>
     <!--服务暴露-->
     <dubbo:service interface="me.warriorg.dubbo.service.FooService" ref="fooService" />
 </beans>

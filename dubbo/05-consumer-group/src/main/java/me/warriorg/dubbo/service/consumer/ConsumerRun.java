@@ -11,13 +11,13 @@ public class ConsumerRun {
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-consumer.xml");
-        FooService fooService = (FooService) applicationContext.getBean("fooService");
-        int i = 0;
-        while (i < 10) {
-            String hello = fooService.hello("Warrior");
-            System.out.println(hello);
-            i++;
-        }
+        FooService fooService = (FooService) applicationContext.getBean("alipay");
+        String hello = fooService.hello("Warrior");
+        System.out.println(hello);
 
+
+        fooService = (FooService) applicationContext.getBean("wechat");
+        hello = fooService.hello("WarriorV2");
+        System.out.println(hello);
     }
 }

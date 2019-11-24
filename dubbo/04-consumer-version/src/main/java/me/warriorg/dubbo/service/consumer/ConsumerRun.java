@@ -12,12 +12,12 @@ public class ConsumerRun {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-consumer.xml");
         FooService fooService = (FooService) applicationContext.getBean("fooService");
-        int i = 0;
-        while (i < 10) {
-            String hello = fooService.hello("Warrior");
-            System.out.println(hello);
-            i++;
-        }
+        String hello = fooService.hello("Warrior");
+        System.out.println(hello);
 
+
+        fooService = (FooService) applicationContext.getBean("fooServiceV2");
+        hello = fooService.hello("WarriorV2");
+        System.out.println(hello);
     }
 }
