@@ -28,6 +28,7 @@ subprojects {
         slf4jVersion = '1.7.29'
         logbackVersion = '1.2.3'
         groovyVersion = "2.5.8"
+        junitVersion = '5.4.2'
     }
 
     dependencies {
@@ -72,6 +73,10 @@ subprojects {
 
             implementation 'org.elasticsearch.client:elasticsearch-rest-client:7.4.2'
             implementation 'org.elasticsearch.client:elasticsearch-rest-high-level-client:7.4.2'
+
+            testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+            testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+            testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
         }
     }
 }

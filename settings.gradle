@@ -24,6 +24,7 @@ include 'dubbo:06-consumer-mocknull'
 include 'dubbo:06-consumer-mockclass'
 include 'dubbo:06-consumer-timeout'
 include 'dubbo:06-provider-timeout'
+include 'dubbo:07-consumer-cache'
 
 include 'mybatis'
 include 'activemq'
@@ -34,4 +35,5 @@ include 'slf4j-logback'
 findProject(':dubbo:02-provider')?.name = '02-provider'
 include 'dubbo:02-consumer-zk'
 findProject(':dubbo:02-consumer-zk')?.name = '02-consumer-zk'
+include 'java-junit'
 
