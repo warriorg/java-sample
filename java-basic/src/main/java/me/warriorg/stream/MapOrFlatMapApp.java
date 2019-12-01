@@ -1,4 +1,4 @@
-package me.warriorg.java.stream;
+package me.warriorg.stream;
 
 import java.util.ArrayList;
 import java.util.List;

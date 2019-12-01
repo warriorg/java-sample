@@ -1,6 +1,5 @@
 rootProject.name = 'java-sample'
 include 'java-vendor'
-include 'java8'
 include 'design-pattern'
 include 'java-basic'
 include 'java-kafka'
