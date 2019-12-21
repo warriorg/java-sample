@@ -1,5 +1,8 @@
 
 dependencies {
+    implementation 'org.openjdk.jol:jol-core'
+
+
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.4.2")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:5.4.2")
