@@ -1,0 +1,19 @@
+rootProject.name = 'spring-boot-sample'
+
+
+include 'spring-boot-mvc'
+
+include 'spring-boot-common'
+include 'spring-boot-drools'
+
+include 'spring-data-jpa'
+
+include 'spring-bucks'
+include 'spring-kafka'
+include 'java-performance'
+include 'mybatis-plus-crud'
+
+include 'spring-mybatis:mybatis-plus-crud'
+include 'spring-mybatis:spring-boot-mybatis'
+include 'spring-data-elasticsearch'
+

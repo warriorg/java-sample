@@ -1,0 +1,6 @@
+
+dependencies {
+    compile 'com.baomidou:mybatis-plus-boot-starter'
+    compile("com.h2database:h2")
+    compile 'p6spy:p6spy'
+}
