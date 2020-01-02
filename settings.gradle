@@ -25,14 +25,17 @@ include 'dubbo:06-consumer-timeout'
 include 'dubbo:06-provider-timeout'
 include 'dubbo:07-consumer-cache'
 
+include 'spring-boot-dubbo:spring-boot-dubbo-provider'
+include 'spring-boot-dubbo:spring-boot-dubbo-api'
+
+
+include 'java-junit'
+
 include 'mybatis'
 include 'activemq'
 include 'pdfbox'
 include 'java-elasticsearch'
-include 'dubbo'
 include 'slf4j-logback'
-findProject(':dubbo:02-provider')?.name = '02-provider'
-include 'dubbo:02-consumer-zk'
-findProject(':dubbo:02-consumer-zk')?.name = '02-consumer-zk'
-include 'java-junit'
+include 'spring-boot-dubbo:spring-boot-dubbo-consumer'
+findProject(':spring-boot-dubbo:spring-boot-dubbo-consumer')?.name = 'spring-boot-dubbo-consumer'
 
