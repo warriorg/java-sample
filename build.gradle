@@ -1,25 +1,8 @@
 
 buildscript {
-
-}
-
-subprojects {
-    apply plugin: 'maven'
-    apply plugin: 'java'
-    apply plugin: 'idea'
-
-    repositories {
-        mavenLocal()
-        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
-        mavenCentral()
-    }
-
-
-    sourceCompatibility = 11
-    targetCompatibility = 11
-
     ext {
         springVersion = '5.2.1.RELEASE'
+        springBootVersion = '2.2.1.RELEASE'
         lombokVersion = '1.18.4'
         mapstructVersion = '1.2.0.Final'
         kafkaVersion = '2.3.0'
@@ -30,6 +13,30 @@ subprojects {
         groovyVersion = "2.5.8"
         junitVersion = '5.4.2'
     }
+
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+subprojects {
+    apply plugin: 'maven'
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+
+
+
+    sourceCompatibility = 11
+    targetCompatibility = 11
+
+
 
     dependencies {
         compile 'org.slf4j:jul-to-slf4j:1.7.25'
