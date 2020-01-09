@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * @author warrior
+ */
 public class MapOrFlatMapApp {
 
     /***
@@ -27,8 +30,9 @@ public class MapOrFlatMapApp {
 
     public static Stream<Character> characterStream(String s){
         List<Character> result = new ArrayList<>();
-        for (char c : s.toCharArray())
+        for (char c : s.toCharArray()) {
             result.add(c);
+        }
         return result.stream();
     }
 }

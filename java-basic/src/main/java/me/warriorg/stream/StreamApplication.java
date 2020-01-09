@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
+/**
+ * @author warrior
+ */
 public class StreamApplication {
 
     static List<User> users = Arrays.asList(
