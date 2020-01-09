@@ -1,6 +1,20 @@
 
-buildscript {
-    ext {
+plugins {
+	id 'org.springframework.boot' version '2.2.2.RELEASE'
+}
+
+subprojects {
+    apply plugin: 'maven'
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+        mavenCentral()
+    }
+
+     ext {
         springVersion = '5.2.1.RELEASE'
         springBootVersion = '2.2.1.RELEASE'
         lombokVersion = '1.18.4'
@@ -13,24 +27,6 @@ buildscript {
         groovyVersion = "2.5.8"
         junitVersion = '5.4.2'
     }
-
-    repositories {
-        mavenLocal()
-        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    }
-}
-
-subprojects {
-    apply plugin: 'maven'
-    apply plugin: 'java'
-    apply plugin: 'idea'
-
-
 
 
     sourceCompatibility = 11
@@ -73,6 +69,11 @@ subprojects {
             implementation "org.slf4j:slf4j-simple:$slf4jVersion"
             implementation "ch.qos.logback:logback-core:$logbackVersion"
             implementation "ch.qos.logback:logback-classic:$logbackVersion"
+
+
+            implementation 'org.postgresql:postgresql:42.2.9'
+            implementation 'mysql:mysql-connector-java:8.0.18'
+            implementation 'org.liquibase:liquibase-core:3.8.4'
 
 
             implementation "org.codehaus.groovy:groovy-all:$groovyVersion"

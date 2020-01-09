@@ -38,5 +38,6 @@ activemq-data/
 .project
 .classpath
 .settings/
+.vscode/
 
 .DS_Store

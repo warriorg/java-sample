@@ -38,4 +38,6 @@ include 'java-elasticsearch'
 include 'slf4j-logback'
 include 'spring-boot-dubbo:spring-boot-dubbo-consumer'
 findProject(':spring-boot-dubbo:spring-boot-dubbo-consumer')?.name = 'spring-boot-dubbo-consumer'
+include 'liquibase'
+include 'spring-boot-liquibase'
 
