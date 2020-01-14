@@ -43,3 +43,7 @@ include 'liquibase'
 include 'spring-boot-liquibase'
 include 'spring-event'
 include 'spring-data-elasticsearch'
+include 'spring-mvc-exceptions'
+include 'spring-datasource'
+include 'spring-pure-datasource'
+

@@ -56,6 +56,7 @@ subprojects {
             implementation 'org.apache.activemq:activemq-all:5.15.9'
             implementation 'org.apache.pdfbox:pdfbox:2.0.17'
             implementation 'com.hankcs:hanlp:portable-1.7.5'
+            implementation 'com.h2database:h2:1.4.200'
 
             implementation "org.apache.dubbo:dubbo:${dubboVersion}"
             implementation "org.apache.curator:curator-recipes:$curatorVersion"
@@ -67,8 +68,12 @@ subprojects {
             implementation "org.springframework:spring-tx:$springVersion"
             implementation "org.springframework:spring-jdbc:$springVersion"
 
+            implementation "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
             implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+            implementation "org.springframework.boot:spring-boot-starter-jdbc:${springBootVersion}"
             implementation "org.springframework.boot:spring-boot-starter-data-elasticsearch:${springBootVersion}"
+            testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+
 
             implementation "org.slf4j:slf4j-api:$slf4jVersion"
             implementation "org.slf4j:slf4j-simple:$slf4jVersion"
@@ -89,6 +94,8 @@ subprojects {
 
             // 分析Java对象的内存布局，包括基本使用、字节对齐、实例域重排序、继承、继承栅栏、继承对齐等内容
             implementation 'org.openjdk.jol:jol-core:0.9'
+
+
 
             testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
             testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
