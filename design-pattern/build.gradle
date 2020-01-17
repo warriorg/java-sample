@@ -2,9 +2,11 @@
 
 dependencies {
     implementation "cglib:cglib"
+    implementation project(":java-common")
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation("org.junit.jupiter:junit-jupiter-api")
     testRuntime("org.junit.jupiter:junit-jupiter-engine")
+
 }
 
 
