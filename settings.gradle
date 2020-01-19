@@ -47,4 +47,5 @@ include 'spring-mvc-exceptions'
 include 'spring-datasource'
 include 'spring-pure-datasource'
 include 'java-common'
+include 'java-spi'
 
