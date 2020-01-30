@@ -48,4 +48,6 @@ include 'spring-datasource'
 include 'spring-pure-datasource'
 include 'java-common'
 include 'java-spi'
+include 'common-lib'
+include 'spring-boot'
 

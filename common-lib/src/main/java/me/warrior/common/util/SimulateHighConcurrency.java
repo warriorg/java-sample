@@ -1,4 +1,4 @@
-package me.warriorg.util;
+package me.warrior.common.util;
 
 import java.util.Objects;
 import java.util.concurrent.CountDownLatch;

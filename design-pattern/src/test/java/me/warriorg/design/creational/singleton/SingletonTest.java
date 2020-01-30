@@ -1,6 +1,6 @@
 package me.warriorg.design.creational.singleton;
 
-import me.warriorg.util.SimulateHighConcurrency;
+import me.warrior.common.util.SimulateHighConcurrency;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.CountDownLatch;
