@@ -1,7 +1,7 @@
-package me.warrior.springboot.service.impl;
+package me.warriorg.springboot.service.impl;
 
-import me.warrior.springboot.config.AppConfig;
-import me.warrior.springboot.service.FooService;
+import me.warriorg.springboot.config.AppConfig;
+import me.warriorg.springboot.service.FooService;
 import org.springframework.scheduling.annotation.Async;
 
 /**

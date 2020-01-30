@@ -1,4 +1,4 @@
-package me.warrior.springboot.config;
+package me.warriorg.springboot.config;
 
 import me.warrior.common.async.ContextCopyingDecorator;
 import org.springframework.context.annotation.Bean;
