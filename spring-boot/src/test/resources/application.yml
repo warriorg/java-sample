@@ -1,0 +1,19 @@
+spring:
+  datasource: # use in-memory db for unit testing
+    url: jdbc:h2:mem:springboot;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=MYSQL
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    continue-on-error: false
+    platform: h2
+    schema: classpath:/db/schema.sql
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: validate # create-drop  # validate  可以验证 schema 是否正确
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true

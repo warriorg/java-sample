@@ -1,6 +1,5 @@
 package me.warriorg.springboot.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import me.warriorg.springboot.entity.UserEntity;
 import me.warriorg.springboot.service.UserService;
@@ -9,6 +8,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,13 +18,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
-import java.io.UnsupportedEncodingException;
-import java.util.TimeZone;
 import java.util.UUID;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -60,7 +59,7 @@ public class UserControllerUnitTest {
         String uid = UUID.randomUUID().toString();
         userEntity.setUid(uid);
         UserEntity expectedUserEntity = userEntity;
-        when(userService.getByUid(uid)).thenReturn(expectedUserEntity);
+        Mockito.when(userService.getByUid(uid)).thenReturn(expectedUserEntity);
 
         MvcResult mvcResult = mockMvc.perform(get("/v1/user/" + uid)
                 .contentType(MediaType.APPLICATION_JSON))

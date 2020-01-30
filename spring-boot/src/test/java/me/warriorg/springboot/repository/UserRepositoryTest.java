@@ -12,13 +12,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-@SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.NONE)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @RunWith(SpringRunner.class)
 public class UserRepositoryTest {
 
@@ -33,7 +30,8 @@ public class UserRepositoryTest {
                 .name("test")
                 .age(100)
                 .build();
-     }
+        userRepo.deleteAll();
+    }
 
     @Test//(expected = DuplicateKeyException.class)
     public void createSampleAccount() {

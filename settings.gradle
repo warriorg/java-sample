@@ -3,6 +3,7 @@ include 'java-vendor'
 include 'design-pattern'
 include 'java-basic'
 include 'java-kafka'
+include 'java-performance'
 include 'java-web'
 
 include 'dubbo:dubbo-api'
