@@ -1,11 +1,11 @@
 package me.warriorg.springboot.service;
 
-import me.warriorg.springboot.entity.UserEntity;
+import me.warriorg.springboot.model.User;
 
 /**
  * @author warrior
  */
 public interface UserService {
 
-    UserEntity getByUid(String uid);
+    User getByUid(String uid);
 }

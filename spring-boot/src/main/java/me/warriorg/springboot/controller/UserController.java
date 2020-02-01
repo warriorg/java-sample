@@ -1,6 +1,6 @@
 package me.warriorg.springboot.controller;
 
-import me.warriorg.springboot.entity.UserEntity;
+import me.warriorg.springboot.model.User;
 import me.warriorg.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +19,7 @@ public class UserController {
     UserService userService;
 
     @GetMapping("{uid}")
-    public UserEntity getByUid(@PathVariable String uid) {
+    public User getByUid(@PathVariable String uid) {
         return userService.getByUid(uid);
     }
 }

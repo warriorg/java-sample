@@ -1,6 +1,6 @@
 package me.warriorg.springboot.repository;
 
-import me.warriorg.springboot.entity.UserEntity;
+import me.warriorg.springboot.model.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,11 +22,11 @@ public class UserRepositoryTest {
     @Autowired
     private UserRepository userRepo;
 
-    private UserEntity userEntity;
+    private User user;
 
     @Before
     public void setUp() {
-        userEntity = UserEntity.builder()
+        user = User.builder()
                 .name("test")
                 .age(100)
                 .build();
@@ -35,27 +35,27 @@ public class UserRepositoryTest {
 
     @Test//(expected = DuplicateKeyException.class)
     public void createSampleAccount() {
-        userRepo.save(userEntity);
-        assertTrue(userRepo.existsById(userEntity.getUid()));
+        userRepo.save(user);
+        assertTrue(userRepo.existsById(user.getUid()));
     }
 
     @Test
     public void listAccount() {
         Pageable pageRequest = PageRequest.of(0, 2);
         // test empty
-        Page<UserEntity> accounts = userRepo.findAll(pageRequest);
+        Page<User> accounts = userRepo.findAll(pageRequest);
         assertEquals(0, accounts.getTotalElements());
 
         // create 1 new
-        userRepo.save(userEntity);
+        userRepo.save(user);
         assertEquals(1, userRepo.count());
 
         // create 2 more
-        userEntity.setUid(null);
-        userRepo.save(userEntity);
+        user.setUid(null);
+        userRepo.save(user);
         assertEquals(2, userRepo.count());
-        userEntity.setUid(null);
-        userRepo.save(userEntity);
+        user.setUid(null);
+        userRepo.save(user);
         assertEquals(3, userRepo.count());
         accounts = userRepo.findAll(pageRequest);
         assertEquals(2, accounts.getNumberOfElements());

@@ -1,7 +1,7 @@
 package me.warriorg.springboot.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import me.warriorg.springboot.entity.UserEntity;
+import me.warriorg.springboot.model.User;
 import me.warriorg.springboot.service.UserService;
 import org.junit.Before;
 import org.junit.Rule;
@@ -41,14 +41,14 @@ public class UserControllerUnitTest {
     @Autowired
     ObjectMapper objectMapper;
 
-    UserEntity userEntity;
+    User user;
 
     @Rule
     public ExpectedException expectedEx = ExpectedException.none();
 
     @Before
     public void setUp() {
-        userEntity = UserEntity.builder()
+        user = User.builder()
                 .name("test")
                 .age(12)
                 .build();
@@ -57,9 +57,9 @@ public class UserControllerUnitTest {
     @Test
     public void testGetUserSuccessfully() throws Exception {
         String uid = UUID.randomUUID().toString();
-        userEntity.setUid(uid);
-        UserEntity expectedUserEntity = userEntity;
-        Mockito.when(userService.getByUid(uid)).thenReturn(expectedUserEntity);
+        user.setUid(uid);
+        User expectedUser = user;
+        Mockito.when(userService.getByUid(uid)).thenReturn(expectedUser);
 
         MvcResult mvcResult = mockMvc.perform(get("/v1/user/" + uid)
                 .contentType(MediaType.APPLICATION_JSON))
@@ -67,9 +67,9 @@ public class UserControllerUnitTest {
                 .andReturn();
 
         verify(userService, times(1)).getByUid(eq(uid));
-        UserEntity userEntityResponse = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), UserEntity.class);
-        assertThat(userEntityResponse.getAge()).isEqualTo(12);
-        assertThat(userEntityResponse.getName()).isEqualTo("test");
-        assertThat(userEntityResponse).isEqualTo(userEntity);
+        User userResponse = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), User.class);
+        assertThat(userResponse.getAge()).isEqualTo(12);
+        assertThat(userResponse.getName()).isEqualTo("test");
+        assertThat(userResponse).isEqualTo(user);
     }
 }

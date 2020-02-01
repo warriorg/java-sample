@@ -1,4 +1,4 @@
-package me.warriorg.springboot.entity;
+package me.warriorg.springboot.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,6 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.io.Serializable;
 
 /**
  * @author warrior
@@ -20,7 +19,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 @Entity
-public class UserEntity {
+public class User {
 
     @Id
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
