@@ -51,4 +51,7 @@ include 'java-common'
 include 'java-spi'
 include 'common-lib'
 include 'spring-boot'
-
+include 'spring-boot-drools'
+include 'spring-kafka'
+include 'spring-mybatis'
+include 'spring-boot-mvc'
