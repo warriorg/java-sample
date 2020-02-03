@@ -1,6 +1,8 @@
 package me.warriorg.springboot.controller;
 
 
+import me.warriorg.springboot.props.BoneProperty;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +20,8 @@ import java.text.MessageFormat;
 @RequestMapping("config")
 public class ConfigController {
 
-    @Value("${bone.dns}")
-    private String dns;
-
-    @Value("${bone.ip}")
-    private String ip;
+    @Autowired
+    BoneProperty boneProperty;
 
     @GetMapping
     public SseEmitter handle() {
@@ -31,9 +30,9 @@ public class ConfigController {
 
         new Thread(() -> {
             try {
-                emitter.send(MessageFormat.format("Externalized Configuration: [{0}]", dns));
+                emitter.send(MessageFormat.format("Externalized Configuration: [{0}]", boneProperty.getDns()));
                 Thread.sleep(1000);
-                emitter.send(MessageFormat.format("Local Configuration: [{0}]", ip));
+                emitter.send(MessageFormat.format("Local Configuration: [{0}]", boneProperty.getIp()));
                 Thread.sleep(1000);
                 emitter.send("Hello again");
                 Thread.sleep(1000);
