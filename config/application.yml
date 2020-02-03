@@ -1,2 +1,3 @@
 # Externalized Configuration
-
+bone:
+  dns: externalized
