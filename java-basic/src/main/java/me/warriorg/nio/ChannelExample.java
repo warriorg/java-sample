@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.logging.Logger;
 
 /**
  * @author warrior
@@ -12,7 +13,7 @@ import java.nio.channels.FileChannel;
 public class ChannelExample {
 
     public static void main(String[] args) throws IOException {
-        RandomAccessFile aFile = new RandomAccessFile(".data/nio-data.txt", "rw");
+        RandomAccessFile aFile = new RandomAccessFile(ChannelExample.class.getClassLoader().getResource("data/nio-data.txt").getFile(), "rw");
         FileChannel inChannel = aFile.getChannel();
 
         ByteBuffer buf = ByteBuffer.allocate(48);
@@ -21,6 +22,7 @@ public class ChannelExample {
         while (bytesRead != -1) {
 
             System.out.println("Read " + bytesRead);
+            Logger.getLogger(ChannelExample.class.getSimpleName()).info("Read " + bytesRead);
             buf.flip();
 
             while(buf.hasRemaining()){

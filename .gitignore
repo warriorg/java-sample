@@ -28,7 +28,7 @@ hs_err_pid*
 ### Gradle template
 .gradle
 build/
-.data/
+test-data/
 gradle/
 .idea
 *.iml
