@@ -25,6 +25,10 @@ include 'dubbo:06-consumer-mockclass'
 include 'dubbo:06-consumer-timeout'
 include 'dubbo:06-provider-timeout'
 include 'dubbo:07-consumer-cache'
+include 'dubbo:10-consumer-async'
+include 'dubbo:10-provider-async'
+include 'dubbo:11-provider-springboot'
+include 'dubbo:11-consumer-springboot'
 
 include 'spring-boot-dubbo:spring-boot-dubbo-provider'
 include 'spring-boot-dubbo:spring-boot-dubbo-api'
@@ -55,3 +59,6 @@ include 'spring-boot-drools'
 include 'spring-kafka'
 include 'spring-mybatis'
 include 'spring-boot-mvc'
+
+findProject(':dubbo:11-consumer-springboot')?.name = '11-consumer-springboot'
+
