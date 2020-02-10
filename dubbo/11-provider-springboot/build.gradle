@@ -17,5 +17,4 @@ processResources {
     from('src/main/java') {
         include '**/*.xml'
     }
-
 }
