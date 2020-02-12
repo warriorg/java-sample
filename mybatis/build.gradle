@@ -1,3 +1,4 @@
 dependencies {
-    compile "org.mybatis:mybatis"
+    implementation "org.mybatis:mybatis"
+    implementation "mysql:mysql-connector-java"
 }

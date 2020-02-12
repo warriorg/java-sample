@@ -37,6 +37,7 @@ include 'spring-boot-dubbo:spring-boot-dubbo-api'
 include 'java-junit'
 
 include 'mybatis'
+include 'mybatis-plus-crud'
 include 'activemq'
 include 'pdfbox'
 include 'java-elasticsearch'

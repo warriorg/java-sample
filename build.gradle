@@ -104,9 +104,9 @@ subprojects {
 
 
 
-            testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
-            testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
-            testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+            implementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+            implementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+            implementation "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
         }
     }
 }
