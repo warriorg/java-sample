@@ -62,4 +62,5 @@ include 'spring-mybatis'
 include 'spring-boot-mvc'
 
 findProject(':dubbo:11-consumer-springboot')?.name = '11-consumer-springboot'
+include 'java-poi'
 
