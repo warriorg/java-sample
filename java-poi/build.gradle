@@ -2,6 +2,12 @@
 dependencies {
     implementation 'org.apache.poi:poi'
     implementation "org.apache.poi:poi-ooxml"
+    implementation "com.alibaba:easyexcel:2.1.6"
+
+    implementation "ch.qos.logback:logback-core"
+    implementation "ch.qos.logback:logback-classic"
+
+    implementation project(":java-common")
 
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation "org.junit.jupiter:junit-jupiter-api"

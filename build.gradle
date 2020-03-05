@@ -2,12 +2,14 @@
 plugins {
     id 'org.springframework.boot' version '2.2.2.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+
 }
 
 subprojects {
     apply plugin: 'maven'
-    apply plugin: 'java'
     apply plugin: 'idea'
+    apply plugin: 'java'
+    apply plugin: 'java-library'
 
     repositories {
         mavenLocal()
@@ -37,14 +39,18 @@ subprojects {
 
 
     dependencies {
-        compile 'org.slf4j:jul-to-slf4j:1.7.25'
-        compile "com.google.guava:guava:28.0-jre",
+        api 'org.slf4j:jul-to-slf4j:1.7.25'
+        api "com.google.guava:guava:28.0-jre",
                 "org.projectlombok:lombok:${lombokVersion}",
                 "org.mapstruct:mapstruct-jdk8:${mapstructVersion}"
+
+
 
         annotationProcessor "org.projectlombok:lombok:${lombokVersion}",
                 "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 
+        testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}",
+                "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 
         constraints {
             implementation 'com.google.code.gson:gson:2.8.5'
