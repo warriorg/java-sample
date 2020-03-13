@@ -2,7 +2,6 @@
 plugins {
     id 'org.springframework.boot' version '2.2.2.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
-
 }
 
 subprojects {
@@ -17,9 +16,11 @@ subprojects {
         mavenCentral()
     }
 
-     ext {
+    ext {
         springVersion = '5.2.1.RELEASE'
         springBootVersion = '2.2.2.RELEASE'
+        springKafkaVersion = '2.3.6.RELEASE'
+        jacksonVersion = "2.10.3"
         lombokVersion = '1.18.4'
         mapstructVersion = '1.2.0.Final'
         kafkaVersion = '2.3.0'
@@ -29,7 +30,8 @@ subprojects {
         logbackVersion = '1.2.3'
         groovyVersion = "2.5.8"
         junitVersion = '5.4.2'
-         poiVersion = '4.1.2'
+        poiVersion = '4.1.2'
+        gsonVersion = "2.8.5"
     }
 
 
@@ -53,8 +55,8 @@ subprojects {
                 "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 
         constraints {
-            implementation 'com.google.code.gson:gson:2.8.5'
-            implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.9'
+            implementation "com.google.code.gson:gson:$gsonVersion"
+            implementation "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
             implementation 'cglib:cglib:3.2.12'
             implementation "org.apache.kafka:kafka-clients:$kafkaVersion"
             implementation "org.apache.kafka:kafka-streams:$kafkaVersion"
@@ -86,8 +88,11 @@ subprojects {
             implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
             implementation "org.springframework.boot:spring-boot-starter-data-redis:${springBootVersion}"
             implementation "org.springframework.boot:spring-boot-starter-data-elasticsearch:${springBootVersion}"
+            implementation "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
+            implementation "org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}"
             testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
 
+            implementation "org.springframework.kafka:spring-kafka:${springKafkaVersion}"
 
             implementation "org.slf4j:slf4j-api:$slf4jVersion"
             implementation "org.slf4j:slf4j-simple:$slf4jVersion"

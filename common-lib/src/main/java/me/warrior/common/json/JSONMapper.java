@@ -92,7 +92,7 @@ public class JSONMapper {
      * @param <T>
      * @return
      */
-    public <T> T fromJson(String json, TypeReference valueTypeRef) {
+    public <T> T fromJson(String json, TypeReference<T> valueTypeRef) {
         if (json == null || json.trim().length() == 0) {
             return null;
         }

@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class DemoTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(DemoTest.class);
-    String fileName = ReadTest.class.getResource("/").getPath() + "resources" + File.separator + "demo.xlsx";
+    String fileName = ReadTest.class.getResource("/").getPath() + "resources" + File.separator + "unyfone.xlsx";
     @Test
     public void read() throws Exception {
         long start = System.currentTimeMillis();
@@ -29,7 +29,7 @@ public class DemoTest {
         // 这里 只要，然后读取第一个sheet 同步读取会自动finish
 //        EasyExcel.read(fileName, new NoModleDataListener()).sheet().doRead();
 
-        List<Map<Integer,String>> list = EasyExcel.read(fileName).sheet().doReadSync();
+        List<Map<Integer,String>> list = EasyExcel.read(fileName).headRowNumber(2).sheet().doReadSync();
         System.out.println(JSONMapper.toJSONString(list));
     }
 

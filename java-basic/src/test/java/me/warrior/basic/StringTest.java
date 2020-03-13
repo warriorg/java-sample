@@ -16,4 +16,10 @@ public class StringTest {
         System.out.println(a == c);
         System.out.println(a == d);
     }
+
+    @Test
+    public void endsWith() {
+        System.out.println("币制".endsWith("我的币制"));
+        System.out.println("我的币制".endsWith("币制"));
+    }
 }
