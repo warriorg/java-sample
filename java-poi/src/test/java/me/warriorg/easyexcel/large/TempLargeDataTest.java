@@ -15,8 +15,7 @@ public class TempLargeDataTest {
     @Test
     public void read() throws Exception {
         long start = System.currentTimeMillis();
-        EasyExcel.read(new FileInputStream(fileName), LargeData.class, new LargeDataListener())
-                .headRowNumber(2).sheet().doRead();
+        EasyExcel.read(new FileInputStream(fileName), LargeData.class, new LargeDataListener()).headRowNumber(2).sheet().doRead();
         LOGGER.info("Large data total time spent:{}", (System.currentTimeMillis() - start) / 1000);
     }
 }

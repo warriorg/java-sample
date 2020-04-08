@@ -117,6 +117,9 @@ subprojects {
             // 分析Java对象的内存布局，包括基本使用、字节对齐、实例域重排序、继承、继承栅栏、继承对齐等内容
             implementation 'org.openjdk.jol:jol-core:0.9'
 
+            //
+            implementation 'org.liquibase:liquibase-core:3.8.8'
+
 
             implementation "org.junit.jupiter:junit-jupiter:$junitVersion"
             implementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"

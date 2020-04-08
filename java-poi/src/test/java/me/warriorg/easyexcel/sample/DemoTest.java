@@ -41,7 +41,7 @@ public class DemoTest {
         // 这里 需要指定读用哪个class去读，然后读取第一个sheet 同步读取会自动finish
         List<DemoData> list = EasyExcel.read(fileName).head(DemoData.class).sheet().doReadSync();
         for (DemoData data : list) {
-            LOGGER.info("读取到数据:{}", JSONMapper.toJSONString(data));
+            LOGGER.info("读取到头数据:{}", JSONMapper.toJSONString(data));
         }
 
         // 这里 也可以不指定class，返回一个list，然后读取第一个sheet 同步读取会自动finish
