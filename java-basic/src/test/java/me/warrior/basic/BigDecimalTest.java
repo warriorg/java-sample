@@ -11,9 +11,9 @@ public class BigDecimalTest {
 
     @Test
     public void test() {
-        BigDecimal b1 = new BigDecimal("12.22223").setScale(2, RoundingMode.HALF_UP);
+        BigDecimal b1 = new BigDecimal("12.22223").setScale(2, RoundingMode.UP);
         System.out.println(b1);
-        Assertions.assertEquals(b1, new BigDecimal("12.22"));
+        Assertions.assertEquals(b1, new BigDecimal("12.23"));
 
         DecimalFormat df = new DecimalFormat("0.0000");
         System.out.println(df.format(new BigDecimal("0.01035")));

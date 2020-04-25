@@ -22,4 +22,11 @@ public class StringTest {
         System.out.println("币制".endsWith("我的币制"));
         System.out.println("我的币制".endsWith("币制"));
     }
+
+    @Test
+    public void splitTest() {
+        String testStr = "142 中国";
+        String[] vals = testStr.split("\\s");
+        System.out.println(vals[0]);
+    }
 }
