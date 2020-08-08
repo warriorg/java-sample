@@ -1,6 +1,7 @@
 package me.warriorg.hanlp;
 
 import com.hankcs.hanlp.HanLP;
+import com.hankcs.hanlp.dictionary.CustomDictionary;
 import com.hankcs.hanlp.dictionary.other.CharTable;
 
 public class DemoTraditionalChinese2SimplifiedChinese {
@@ -9,12 +10,16 @@ public class DemoTraditionalChinese2SimplifiedChinese {
 //        long start = System.currentTimeMillis();
 //        while (i > 0) {
 //            i--;
-        System.out.println(HanLP.t2s("記憶體，單車"));
+
+        HanLP.Config.Normalization = true;
+        System.out.println(HanLP.t2s("記憶體，單車AAbb"));
+        CustomDictionary.add("AA");
         // 按字转换
-        System.out.println(CharTable.convert("記憶體，單車"));
+        CharTable.normalization(new char['A']);
+        System.out.println(CharTable.convert("記憶體，單車AAbb"));
 
             FooBean bean = new FooBean();
-            bean.setSimplified("「以後等妳1-2342woerddfd 3我们的国家&（88當上皇后，就能買士多啤梨慶祝了」");
+            bean.setSimplified("「以後等妳1-2342AAwoerddfd 3我们的国家&（88當上皇后，就能買士多啤梨慶祝了」");
             System.out.println(bean);
 //            System.out.println(HanLP.convertToTraditionalChinese("用笔记本电脑写程序"));
 //            System.out.println(HanLP.convertToSimplifiedChinese("「以後等妳1-2342woerddfd 3我们的国家&（88當上皇后，就能買士多啤梨慶祝了」"));

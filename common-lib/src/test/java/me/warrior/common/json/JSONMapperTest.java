@@ -1,5 +1,8 @@
 package me.warrior.common.json;
 
+import me.warrior.common.model.Address;
+import me.warrior.common.model.People;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -38,5 +41,17 @@ public class JSONMapperTest {
 
         List<Map<String, Object>> jsonList = JSONMapper.getInstance().fromJson(json, List.class);
         System.out.println(jsonList);
+    }
+
+
+    @Test
+    public void complexObjectTest() {
+        Address address = new Address("1", "苏州");
+        People people = new People(10, "男", "张三", address);
+        String json = JSONMapper.toJSONString(people);
+
+        People people1 = JSONMapper.getInstance().fromJson(json, People.class);
+        Assertions.assertEquals(people.getAddress().getUid(), people1.getAddress().getUid());
+
     }
 }

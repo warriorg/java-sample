@@ -10,7 +10,7 @@ dependencies {
     implementation "com.alibaba:druid"
     implementation "mysql:mysql-connector-java"
 
-    implementation project(":dubbo:00-api")
+    implementation project(":00-api")
 }
 
 processResources {

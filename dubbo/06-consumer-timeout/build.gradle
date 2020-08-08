@@ -12,7 +12,7 @@ dependencies {
     implementation "ch.qos.logback:logback-core"
     implementation "ch.qos.logback:logback-classic"
 
-    implementation project(":dubbo:00-api")
+    implementation project(":00-api")
 }
 
 //// 结局直接跑错误的问题

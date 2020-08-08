@@ -3,6 +3,8 @@ package me.warrior.basic;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+
 public class StringTest {
 
     @Test
@@ -28,5 +30,10 @@ public class StringTest {
         String testStr = "142 中国";
         String[] vals = testStr.split("\\s");
         System.out.println(vals[0]);
+    }
+
+    @Test
+    public void type() {
+       System.out.println(BigDecimal.class.getSuperclass().getSimpleName());
     }
 }

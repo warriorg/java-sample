@@ -6,32 +6,16 @@ include 'java-kafka'
 include 'java-performance'
 include 'java-web'
 
-include 'dubbo:dubbo-api'
-include 'dubbo:dubbo-provider'
-include 'dubbo:dubbo-consumer'
-include 'dubbo:00-api'
-include 'dubbo:01-consumer'
-include 'dubbo:01-provider'
-include 'dubbo:01-provider2'
-include 'dubbo:02-consumer-zk'
-include 'dubbo:02-provider-zk'
-include 'dubbo:02-provider-zk-01'
-include 'dubbo:04-consumer-version'
-include 'dubbo:04-provider-version'
-include 'dubbo:05-consumer-group'
-include 'dubbo:05-provider-group'
-include 'dubbo:06-consumer-mocknull'
-include 'dubbo:06-consumer-mockclass'
-include 'dubbo:06-consumer-timeout'
-include 'dubbo:06-provider-timeout'
-include 'dubbo:07-consumer-cache'
-include 'dubbo:10-consumer-async'
-include 'dubbo:10-provider-async'
-include 'dubbo:11-provider-springboot'
-include 'dubbo:11-consumer-springboot'
 
-include 'spring-boot-dubbo:spring-boot-dubbo-provider'
-include 'spring-boot-dubbo:spring-boot-dubbo-api'
+file('dubbo').eachDir { dir ->
+    include dir.name
+    project(":${dir.name}").projectDir = dir
+}
+
+file('spring-boot-dubbo').eachDir { dir ->
+    include dir.name
+    project(":${dir.name}").projectDir = dir
+}
 
 
 include 'java-junit'
@@ -42,8 +26,6 @@ include 'activemq'
 include 'pdfbox'
 include 'java-elasticsearch'
 include 'slf4j-logback'
-include 'spring-boot-dubbo:spring-boot-dubbo-consumer'
-findProject(':spring-boot-dubbo:spring-boot-dubbo-consumer')?.name = 'spring-boot-dubbo-consumer'
 include 'liquibase'
 
 include 'spring-boot-liquibase'
@@ -61,6 +43,5 @@ include 'spring-kafka'
 include 'spring-mybatis'
 include 'spring-boot-mvc'
 
-findProject(':dubbo:11-consumer-springboot')?.name = '11-consumer-springboot'
 include 'java-poi'
 

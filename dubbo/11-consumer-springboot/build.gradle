@@ -6,5 +6,5 @@ dependencies {
     implementation "org.apache.dubbo:dubbo-spring-boot-starter:2.7.5"
     implementation "org.apache.dubbo:dubbo-dependencies-zookeeper:2.7.5"
 
-    implementation project(":dubbo:00-api")
+    implementation project(":00-api")
 }

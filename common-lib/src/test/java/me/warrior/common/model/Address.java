@@ -9,11 +9,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class People {
-    private int age;
-    private String gender;
-    private String name;
+public class Address {
 
+    private String uid;
 
-    private Address address;
+    private String address;
+
 }

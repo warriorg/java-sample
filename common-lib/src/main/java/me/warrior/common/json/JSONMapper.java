@@ -3,15 +3,15 @@ package me.warrior.common.json;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.type.TypeFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -188,6 +188,64 @@ public class JSONMapper {
         }
         return list;
     }
+
+    /**
+     * JSON转换成Java对象
+     *
+     * @param json
+     * @param javaType
+     * @param <T>
+     * @return
+     */
+    public <T> T fromJson(String json, JavaType javaType) {
+        if (json == null || json.trim().length() == 0) {
+            return null;
+        }
+
+        try {
+            return mapper.readValue(json, javaType);
+        }
+        catch (IOException e) {
+            logger.warn("fromJson出错:" + json, e);
+            return null;
+        }
+    }
+
+
+    /**
+     * JSON转换成Java对象
+     *
+     * @param json
+     * @param type
+     * @param <T>
+     * @return
+     */
+    public <T> T fromJson(String json, Type type) {
+        return fromJson(json, getJavaType(type));
+    }
+
+    public JavaType getJavaType(Type type) {
+        //判断是否带有泛型
+        if (type instanceof ParameterizedType) {
+            Type[] actualTypeArguments = ((ParameterizedType) type).getActualTypeArguments();
+            //获取泛型类型
+            Class rowClass = (Class) ((ParameterizedType) type).getRawType();
+
+            JavaType[] javaTypes = new JavaType[actualTypeArguments.length];
+
+            for (int i = 0; i < actualTypeArguments.length; i++) {
+                //泛型也可能带有泛型，递归获取
+                javaTypes[i] = getJavaType(actualTypeArguments[i]);
+            }
+            return TypeFactory.defaultInstance().constructParametricType(rowClass, javaTypes);
+        } else {
+            //简单类型直接用该类构建JavaType
+            Class cla = (Class) type;
+            return TypeFactory.defaultInstance().constructParametricType(cla, new JavaType[0]);
+        }
+    }
+
+
 
     public ObjectMapper getMapper() {
         return mapper;
