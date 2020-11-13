@@ -1,13 +1,23 @@
 rootProject.name = 'java-sample'
-include 'java-vendor'
+
 include 'design-pattern'
 include 'java-basic'
-include 'java-kafka'
 include 'java-performance'
 include 'java-web'
+include 'java-spi'
+include 'common-lib'
 
+file('big-data').eachDir { dir ->
+    include dir.name
+    project(":${dir.name}").projectDir = dir
+}
 
 file('dubbo').eachDir { dir ->
+    include dir.name
+    project(":${dir.name}").projectDir = dir
+}
+
+file('spring-boot').eachDir { dir ->
     include dir.name
     project(":${dir.name}").projectDir = dir
 }
@@ -17,31 +27,18 @@ file('spring-boot-dubbo').eachDir { dir ->
     project(":${dir.name}").projectDir = dir
 }
 
+file('vendor').eachDir { dir ->
+    include dir.name
+    project(":${dir.name}").projectDir = dir
+}
 
-include 'java-junit'
+file('mq').eachDir { dir ->
+    include dir.name
+    project(":${dir.name}").projectDir = dir
+}
 
-include 'mybatis'
-include 'mybatis-plus-crud'
-include 'activemq'
-include 'pdfbox'
-include 'java-elasticsearch'
-include 'slf4j-logback'
-include 'liquibase'
-
-include 'spring-boot-liquibase'
-include 'spring-event'
-include 'spring-data-elasticsearch'
-include 'spring-mvc-exceptions'
-include 'spring-datasource'
-include 'spring-pure-datasource'
-include 'java-common'
-include 'java-spi'
-include 'common-lib'
-include 'spring-boot'
-include 'spring-boot-drools'
-include 'spring-kafka'
-include 'spring-mybatis'
-include 'spring-boot-mvc'
-
-include 'java-poi'
+file('spring').eachDir { dir ->
+    include dir.name
+    project(":${dir.name}").projectDir = dir
+}
 

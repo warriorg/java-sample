@@ -1,6 +1,6 @@
 
 plugins {
-    id 'org.springframework.boot' version '2.2.2.RELEASE'
+    id 'org.springframework.boot' version '2.3.2.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 }
 
@@ -66,6 +66,8 @@ subprojects {
 
             implementation 'org.mybatis:mybatis:3.5.2'
             implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1'
+            implementation 'com.baomidou:mybatis-plus-boot-starter:3.4.0'
+            implementation 'p6spy:p6spy:3.9.1'
             implementation 'org.apache.activemq:activemq-all:5.15.9'
             implementation 'org.apache.pdfbox:pdfbox:2.0.17'
             implementation 'com.hankcs:hanlp:portable-1.7.5'
@@ -119,11 +121,16 @@ subprojects {
 
             //
             implementation 'org.liquibase:liquibase-core:3.8.8'
-
+            implementation 'org.kie:kie-api:7.45.0.Final'
+            implementation 'org.drools:drools-compiler:7.45.0.Final'
 
             implementation "org.junit.jupiter:junit-jupiter:$junitVersion"
             implementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
             implementation "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+
+
+            // big data
+
         }
     }
 }

@@ -1,0 +1,13 @@
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web"
+
+    // cli
+    compile "org.kie:kie-api"
+    compile "org.drools:drools-compiler"
+
+}
+
+
+
+

@@ -1,6 +1,0 @@
-rootProject.name = 'spring-cloud-microservice'
-include 'config-server'
-include 'netflix-server'
-include 'user-provider'
-include 'feign-store'
-include 'ribbon-store'
