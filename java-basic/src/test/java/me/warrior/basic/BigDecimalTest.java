@@ -18,4 +18,14 @@ public class BigDecimalTest {
         DecimalFormat df = new DecimalFormat("0.0000");
         System.out.println(df.format(new BigDecimal("0.01035")));
     }
+
+
+    @Test
+    public void nullStrTest() {
+        String val = "";
+        BigDecimal decimal = new BigDecimal(val);
+        System.out.println(decimal);
+        val = null;
+        new BigDecimal(val);
+    }
 }

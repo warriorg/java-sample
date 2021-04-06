@@ -1,3 +1,5 @@
 dependencies {
     implementation "org.apache.dubbo:dubbo"
+
+    compile project(':dubbo-api')
 }

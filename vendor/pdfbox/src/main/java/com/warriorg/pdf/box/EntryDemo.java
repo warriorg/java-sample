@@ -72,7 +72,7 @@ public class EntryDemo {
 
         contentStream.close();
 
-        doc.save(System.getProperty("user.dir") + "/pdfbox/test.pdf");
+        doc.save(System.getProperty("user.dir") + "/test.pdf");
         doc.close();
     }
 

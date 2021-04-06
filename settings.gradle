@@ -6,6 +6,8 @@ include 'java-performance'
 include 'java-web'
 include 'java-spi'
 include 'common-lib'
+include 'redis'
+
 
 file('big-data').eachDir { dir ->
     include dir.name
@@ -46,6 +48,4 @@ file('practice').eachDir { dir ->
     include dir.name
     project(":${dir.name}").projectDir = dir
 }
-
-
 

@@ -46,6 +46,10 @@ subprojects {
                 "org.projectlombok:lombok:${lombokVersion}",
                 "org.mapstruct:mapstruct-jdk8:${mapstructVersion}"
 
+        testImplementation 'org.junit.jupiter:junit-jupiter'
+        testImplementation "org.junit.jupiter:junit-jupiter-api"
+        testRuntime "org.junit.jupiter:junit-jupiter-engine"
+
 
 
         annotationProcessor "org.projectlombok:lombok:${lombokVersion}",
@@ -69,7 +73,7 @@ subprojects {
             implementation 'com.baomidou:mybatis-plus-boot-starter:3.4.0'
             implementation 'p6spy:p6spy:3.9.1'
             implementation 'org.apache.activemq:activemq-all:5.15.9'
-            implementation 'org.apache.pdfbox:pdfbox:2.0.17'
+            implementation 'org.apache.pdfbox:pdfbox:2.0.21'
             implementation 'com.hankcs:hanlp:portable-1.7.5'
             implementation 'com.h2database:h2:1.4.200'
 
@@ -128,6 +132,7 @@ subprojects {
             implementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
             implementation "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 
+            implementation 'redis.clients:jedis:3.5.1'
 
             // big data
 
@@ -135,15 +140,4 @@ subprojects {
     }
 }
 
-project(":dubbo-provider") {
-    dependencies {
-        compile project(':dubbo-api')
-    }
-}
-
-project(":dubbo-consumer") {
-    dependencies {
-        compile project(':dubbo-api')
-    }
-}
 
