@@ -1,10 +1,10 @@
 
 dependencies {
-    compile "org.springframework.boot:spring-boot-starter-web"
+    api "org.springframework.boot:spring-boot-starter-web"
 
     // cli
-    compile "org.kie:kie-api"
-    compile "org.drools:drools-compiler"
+    api "org.kie:kie-api"
+    api "org.drools:drools-compiler"
 
 }
 

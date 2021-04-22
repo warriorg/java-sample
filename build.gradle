@@ -5,14 +5,13 @@ plugins {
 }
 
 subprojects {
-    apply plugin: 'maven'
     apply plugin: 'idea'
     apply plugin: 'java'
     apply plugin: 'java-library'
 
     repositories {
         mavenLocal()
-        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public" }
         mavenCentral()
     }
 
@@ -48,7 +47,7 @@ subprojects {
 
         testImplementation 'org.junit.jupiter:junit-jupiter'
         testImplementation "org.junit.jupiter:junit-jupiter-api"
-        testRuntime "org.junit.jupiter:junit-jupiter-engine"
+        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
 
 
 
@@ -137,6 +136,10 @@ subprojects {
             // big data
 
         }
+    }
+
+    tasks.withType(Wrapper) {
+        enabled = false
     }
 }
 
