@@ -8,4 +8,7 @@ import me.warriorg.springboot.model.User;
 public interface UserService {
 
     User getByUid(String uid);
+
+
+    void testTransactionalEvent();
 }

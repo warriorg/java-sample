@@ -1,4 +1,4 @@
-package me.warriorg.thread;
+package me.warriorg.juc;
 
 import java.text.NumberFormat;
 

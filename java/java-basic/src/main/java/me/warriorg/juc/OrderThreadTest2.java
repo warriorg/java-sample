@@ -1,4 +1,4 @@
-package me.warriorg.thread;
+package me.warriorg.juc;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;

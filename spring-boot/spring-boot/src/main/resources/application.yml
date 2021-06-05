@@ -1,6 +1,4 @@
 
-
-
 bone:
   dns: ${DNS:test}
   ip: ${IP:192.168.2.109}

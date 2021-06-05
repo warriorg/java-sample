@@ -1,4 +1,4 @@
-package me.warriorg.thread.count_down_latch;
+package me.warriorg.juc.count_down_latch;
 
 import java.util.concurrent.CountDownLatch;
 

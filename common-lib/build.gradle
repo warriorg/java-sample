@@ -2,6 +2,7 @@
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
 
+    implementation 'org.hibernate:hibernate-core'
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation "org.junit.jupiter:junit-jupiter-api"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"

@@ -1,12 +1,14 @@
 rootProject.name = 'java-sample'
 
 include 'design-pattern'
-include 'java-basic'
 include 'java-performance'
-include 'java-web'
-include 'java-spi'
 include 'common-lib'
 include 'redis'
+
+file('java').eachDir { dir ->
+    include dir.name
+    project(":${dir.name}").projectDir = dir
+}
 
 file('dubbo').eachDir { dir ->
     include dir.name

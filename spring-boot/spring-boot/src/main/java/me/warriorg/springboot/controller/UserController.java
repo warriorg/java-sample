@@ -18,6 +18,11 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @GetMapping("test")
+    public void test() {
+        userService.testTransactionalEvent();
+    }
+
     @GetMapping("{uid}")
     public User getByUid(@PathVariable String uid) {
         return userService.getByUid(uid);

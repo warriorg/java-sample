@@ -131,10 +131,9 @@ subprojects {
             implementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
             implementation "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 
+            implementation 'org.hibernate:hibernate-core:5.4.31.Final'
+
             implementation 'redis.clients:jedis:3.5.1'
-
-            // big data
-
         }
     }
 
