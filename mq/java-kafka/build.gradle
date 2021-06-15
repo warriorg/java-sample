@@ -2,4 +2,7 @@
 dependencies {
     implementation "org.apache.kafka:kafka-clients"
     implementation "org.apache.kafka:kafka-streams"
+
+    implementation "ch.qos.logback:logback-core"
+    implementation "ch.qos.logback:logback-classic"
 }

@@ -12,7 +12,7 @@ public class OneConsumer {
 
     public OneConsumer() {
         Properties properties = new Properties();
-        String brokers = "127.0.0.1:9092";
+        String brokers = "node01:9092,node02:9092,node03:9092";
         properties.put("bootstrap.servers", brokers);
         // 指定消费者组ID
         properties.put("group.id", "testGroup1");
@@ -29,7 +29,7 @@ public class OneConsumer {
         // earliest： 从partition的最开始的offset开始
         // lastest: 从该partition的最后offset开始，即HW
         properties.put("auto.offset.reset", "earliest");
-        properties.put("key.deserializer", "org.apache.kafka.common.serialization.IntegerDeserializer");
+        properties.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         properties.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         this.consumer = new KafkaConsumer<>(properties);
     }
