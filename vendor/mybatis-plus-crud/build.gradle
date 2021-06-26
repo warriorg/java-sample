@@ -1,6 +1,9 @@
 
 dependencies {
     implementation 'com.baomidou:mybatis-plus-boot-starter'
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+
     implementation("com.h2database:h2")
     implementation 'p6spy:p6spy'
 }
