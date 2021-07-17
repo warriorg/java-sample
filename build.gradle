@@ -141,6 +141,10 @@ subprojects {
     tasks.withType(Wrapper) {
         enabled = false
     }
+
+    clean{
+        delete "bin", "out", ".settings", ".classpath", ".project"
+    }
 }
 
 

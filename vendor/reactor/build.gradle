@@ -1,0 +1,6 @@
+dependencies {
+    implementation 'io.projectreactor:reactor-core:3.3.0.RELEASE'
+
+    implementation "ch.qos.logback:logback-core"
+    implementation "ch.qos.logback:logback-classic"
+}

@@ -35,11 +35,6 @@ file('mq').eachDir { dir ->
     project(":${dir.name}").projectDir = dir
 }
 
-file('spring').eachDir { dir ->
-    include dir.name
-    project(":${dir.name}").projectDir = dir
-}
-
 file('practice').eachDir { dir ->
     include dir.name
     project(":${dir.name}").projectDir = dir

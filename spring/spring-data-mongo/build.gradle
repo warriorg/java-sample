@@ -1,5 +1,0 @@
-
-dependencies {
-    implementation "org.springframework.boot:spring-boot-starter-data-mongodb"
-    implementation "com.fasterxml.jackson.core:jackson-databind"
-}

@@ -20,6 +20,15 @@ public class StringTest {
     }
 
     @Test
+    public void substring() {
+        String str = "012345";
+        System.out.println(str.substring(0, 2));
+        System.out.println(str.substring(3, 4));
+        System.out.println(str.substring(4, 5));
+        System.out.println(str.substring(5, 6));
+    }
+
+    @Test
     public void endsWith() {
         System.out.println("币制".endsWith("我的币制"));
         System.out.println("我的币制".endsWith("币制"));
