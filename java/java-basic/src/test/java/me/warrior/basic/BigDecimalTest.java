@@ -28,4 +28,16 @@ public class BigDecimalTest {
         val = null;
         new BigDecimal(val);
     }
+
+    @Test
+    public void refenceTest() {
+        BigDecimal[] val = {new BigDecimal("100")};
+        refence(val);
+        System.out.println(val[0]);
+        Assertions.assertEquals(val[0], new BigDecimal("90"));
+    }
+
+    public void refence(BigDecimal[] val) {
+        val[0] = val[0].subtract(new BigDecimal("10"));
+    }
 }

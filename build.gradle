@@ -1,7 +1,7 @@
 
 plugins {
-    id 'org.springframework.boot' version '2.3.2.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'org.springframework.boot' version '2.6.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
 subprojects {
@@ -16,9 +16,9 @@ subprojects {
     }
 
     ext {
-        springVersion = '5.2.1.RELEASE'
-        springBootVersion = '2.2.2.RELEASE'
-        springKafkaVersion = '2.3.6.RELEASE'
+        springVersion = '5.3.14'
+        springBootVersion = '2.5.2'
+        springKafkaVersion = '2.5.2'
         jacksonVersion = "2.10.3"
         lombokVersion = '1.18.4'
         mapstructVersion = '1.2.0.Final'
@@ -28,14 +28,14 @@ subprojects {
         slf4jVersion = '1.7.29'
         logbackVersion = '1.2.3'
         groovyVersion = "2.5.8"
-        junitVersion = '5.4.2'
+        junitVersion = '5.8.1'
         poiVersion = '4.1.2'
         gsonVersion = "2.8.5"
     }
 
 
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 
 
 
@@ -138,13 +138,15 @@ subprojects {
         }
     }
 
-    tasks.withType(Wrapper) {
-        enabled = false
-    }
-
-    clean{
-        delete "bin", "out", ".settings", ".classpath", ".project"
+    clean {
+        delete "bin", "out", ".gradle", ".idea", ".settings", ".classpath", ".project", ".metals"
     }
 }
+
+tasks.withType(Wrapper) {
+    enabled = false
+}
+
+
 
 

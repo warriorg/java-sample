@@ -10,20 +10,20 @@ file('java').eachDir { dir ->
     project(":${dir.name}").projectDir = dir
 }
 
-file('dubbo').eachDir { dir ->
-    include dir.name
-    project(":${dir.name}").projectDir = dir
-}
+//file('dubbo').eachDir { dir ->
+//    include dir.name
+//    project(":${dir.name}").projectDir = dir
+//}
 
-file('spring-boot').eachDir { dir ->
-    include dir.name
-    project(":${dir.name}").projectDir = dir
-}
+//file('spring-boot').eachDir { dir ->
+//    include dir.name
+//    project(":${dir.name}").projectDir = dir
+//}
 
-file('spring-boot-dubbo').eachDir { dir ->
-    include dir.name
-    project(":${dir.name}").projectDir = dir
-}
+//file('spring-boot-dubbo').eachDir { dir ->
+//    include dir.name
+//    project(":${dir.name}").projectDir = dir
+//}
 
 file('vendor').eachDir { dir ->
     include dir.name

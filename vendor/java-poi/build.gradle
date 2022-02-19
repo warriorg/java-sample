@@ -10,7 +10,7 @@ dependencies {
     implementation "ch.qos.logback:logback-core"
     implementation "ch.qos.logback:logback-classic"
 
-    implementation project(":common-lib")
+//    implementation project(":common-lib")
 
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation "org.junit.jupiter:junit-jupiter-api"
