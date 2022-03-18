@@ -1,9 +1,8 @@
 rootProject.name = 'java-sample'
 
 include 'design-pattern'
-include 'java-performance'
+//include 'java-performance'
 include 'common-lib'
-include 'redis'
 
 file('java').eachDir { dir ->
     include dir.name

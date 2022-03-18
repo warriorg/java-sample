@@ -1,5 +1,8 @@
 package me.warriorg.design.creational.builder;
 
+/**
+ * @author warriorg
+ */
 public class Director {
     private Builder builder = new ProductBuilder();
     public Product getAProduct(){
