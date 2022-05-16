@@ -9,13 +9,15 @@ import java.util.concurrent.*;
  */
 public class Scheduled {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
         ScheduledFuture future = executorService.scheduleAtFixedRate(() -> {
             System.out.println("1s " + LocalDateTime.now());
         }, 1, 2, TimeUnit.SECONDS);
         ScheduledFuture future1 = executorService.schedule(() -> {
             System.out.println("一次执行" + LocalDateTime.now());
-        }, 1, TimeUnit.SECONDS);
+            executorService.shutdown();
+        }, 10, TimeUnit.SECONDS);
+        System.out.println("xxxxxx");
     }
 }
