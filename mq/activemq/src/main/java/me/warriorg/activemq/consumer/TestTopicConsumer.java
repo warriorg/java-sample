@@ -15,6 +15,7 @@ import java.io.IOException;
  * 第七步：接收消息。
  * 第八步：打印消息。
  * 第九步：关闭资源
+ * @author warriorg
  */
 public class TestTopicConsumer {
 

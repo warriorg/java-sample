@@ -4,6 +4,8 @@ include 'design-pattern'
 //include 'java-performance'
 include 'common-lib'
 
+include 'selenium'
+
 file('java').eachDir { dir ->
     include dir.name
     project(":${dir.name}").projectDir = dir

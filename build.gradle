@@ -138,6 +138,10 @@ subprojects {
     clean {
         delete "bin", "out", ".gradle", ".idea", ".settings", ".classpath", ".project", ".metals"
     }
+
+    test {
+        useJUnitPlatform()
+    }
 }
 
 tasks.withType(Wrapper) {
