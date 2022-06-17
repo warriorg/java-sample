@@ -1,6 +1,5 @@
 package me.warrior.basic;
 
-import org.hibernate.id.UUIDGenerator;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
