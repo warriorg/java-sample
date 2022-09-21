@@ -21,9 +21,8 @@ public class StringTest {
 
     @Test
     public void substring() {
-        String str = "012345";
-        System.out.println(str.substring(0, 2));
-        System.out.println(str.substring(3, 4));
+        String str = "0615IE";
+        System.out.println(str.substring(0, 4));
         System.out.println(str.substring(4, 5));
         System.out.println(str.substring(5, 6));
     }

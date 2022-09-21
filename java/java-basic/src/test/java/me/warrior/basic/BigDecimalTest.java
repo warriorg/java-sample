@@ -31,11 +31,14 @@ public class BigDecimalTest {
 
     @Test
     public void halfUp() {
-        BigDecimal value = new BigDecimal("1254.555");
+        BigDecimal value = new BigDecimal("1254.55500");
+        Assertions.assertEquals(0, value.scale());
         BigDecimal target = value.setScale(2, RoundingMode.HALF_UP);
         Assertions.assertEquals(target, new BigDecimal("1254.56"));
+        Assertions.assertEquals(2, value.scale());
 
         value = new BigDecimal("1254.554");
+        Assertions.assertEquals(0, value.scale());
         target = value.setScale(2, RoundingMode.HALF_UP);
         Assertions.assertEquals(target, new BigDecimal("1254.55"));
     }
