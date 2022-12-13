@@ -2,8 +2,6 @@ rootProject.name = 'java-sample'
 
 include 'design-pattern'
 include 'common-lib'
-include 'selenium'
-include 'easyexcel'
 
 file('java').eachDir { dir ->
     include dir.name

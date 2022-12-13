@@ -15,7 +15,6 @@ subprojects {
         lombokVersion = '1.18.4'
         mapstructVersion = '1.2.0.Final'
         kafkaVersion = '2.3.0'
-        dubboVersion = '2.7.5'
         curatorVersion = '4.2.0'
         slf4jVersion = '1.7.29'
         logbackVersion = '1.2.3'
@@ -65,11 +64,8 @@ subprojects {
             implementation 'com.hankcs:hanlp:portable-1.7.5'
             implementation 'com.h2database:h2:1.4.200'
 
-            implementation "org.apache.dubbo:dubbo:${dubboVersion}"
             implementation "org.apache.curator:curator-recipes:$curatorVersion"
-
             implementation "org.apache.curator:curator-framework:$curatorVersion"
-
 
             implementation "org.slf4j:slf4j-api:$slf4jVersion"
             implementation "org.slf4j:slf4j-simple:$slf4jVersion"
