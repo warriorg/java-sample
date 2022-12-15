@@ -20,7 +20,6 @@ subprojects {
         logbackVersion = '1.2.3'
         groovyVersion = "2.5.8"
         junitVersion = '5.8.1'
-        poiVersion = '4.1.2'
         gsonVersion = "2.8.5"
     }
 
@@ -84,8 +83,7 @@ subprojects {
             implementation 'org.elasticsearch.client:elasticsearch-rest-client:7.4.2'
             implementation 'org.elasticsearch.client:elasticsearch-rest-high-level-client:7.4.2'
 
-            implementation "org.apache.poi:poi:${poiVersion}"
-            implementation "org.apache.poi:poi-ooxml:${poiVersion}"
+
 
             // 分析Java对象的内存布局，包括基本使用、字节对齐、实例域重排序、继承、继承栅栏、继承对齐等内容
             implementation 'org.openjdk.jol:jol-core:0.9'
