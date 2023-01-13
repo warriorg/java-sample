@@ -39,10 +39,14 @@ public class ExcelFillTest {
 
         }
 
+
         Workbook workbook = new XSSFWorkbook(fileName);
         Sheet sheet = workbook.getSheetAt(0);
         insertImageToCell(workbook, sheet, stamp);
-
+        fileName = TestFileUtil.getPath() + "fill" + System.currentTimeMillis() + ".xlsx";
+        try (OutputStream outputStream = new FileOutputStream(fileName)) {
+            workbook.write(outputStream);
+        }
     }
 
 
@@ -57,10 +61,8 @@ public class ExcelFillTest {
             final Drawing drawing = sheet.createDrawingPatriarch();
             final ClientAnchor anchor = helper.createClientAnchor();
             anchor.setAnchorType(ClientAnchor.AnchorType.MOVE_AND_RESIZE);
-            anchor.setCol1(6);
-            anchor.setRow1(10); // same row is okay
-            anchor.setRow2(11);
-            anchor.setCol2(7);
+            anchor.setCol1(10);
+            anchor.setRow1(16); // same row is okay
 
             int inputImagePictureID = workbook.addPicture(inputImageBytes, Workbook.PICTURE_TYPE_PNG);
             final Picture pict = drawing.createPicture(anchor, inputImagePictureID);
