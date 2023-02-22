@@ -19,6 +19,11 @@ public class BigDecimalTest {
         System.out.println(df.format(new BigDecimal("0.01035")));
     }
 
+    @Test
+    public void zore_test() {
+        System.out.println(BigDecimal.ONE.divide(BigDecimal.ZERO));
+    }
+
 
     @Test
     public void nullStrTest() {
@@ -57,4 +62,5 @@ public class BigDecimalTest {
     public void refence(BigDecimal[] val) {
         val[0] = val[0].subtract(new BigDecimal("10"));
     }
+
 }

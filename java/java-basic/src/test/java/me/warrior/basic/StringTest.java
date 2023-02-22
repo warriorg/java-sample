@@ -1,9 +1,13 @@
 package me.warrior.basic;
 
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StringTest {
 
@@ -43,5 +47,15 @@ public class StringTest {
     @Test
     public void type() {
        System.out.println(BigDecimal.class.getSuperclass().getSimpleName());
+    }
+
+
+    @Test
+    public void java12NewMethod() {
+        assertEquals("  ".isBlank(), true);
+        assertEquals("Twinkle ".repeat(2),"Twinkle Twinkle ");
+        assertEquals("Format Line".indent(4), "    Format Line\n");
+        assertEquals(" Text with white spaces   ".strip(),"Text with white spaces");
+        assertEquals("Car, Bus, Train".transform(s1 -> Arrays.asList(s1.split(","))).get(0), "Car");
     }
 }

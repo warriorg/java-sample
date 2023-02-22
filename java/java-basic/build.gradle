@@ -3,6 +3,9 @@ dependencies {
     implementation 'org.openjdk.jol:jol-core'
     implementation project(":common-lib")
 
+    implementation "ch.qos.logback:logback-core"
+    implementation "ch.qos.logback:logback-classic"
+
     testImplementation 'org.junit.jupiter:junit-jupiter:5.4.2'
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.4.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.4.2")
