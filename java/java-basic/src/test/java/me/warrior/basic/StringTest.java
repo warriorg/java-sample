@@ -42,6 +42,15 @@ public class StringTest {
         String testStr = "142 中国";
         String[] vals = testStr.split("\\s");
         System.out.println(vals[0]);
+
+        System.out.println("==============================");
+        String dateStr = "xxxx@yyymmm@xxx";
+        vals = dateStr.split("@");
+        Arrays.stream(vals).forEach(System.out::println);
+        System.out.println("==============================");
+        dateStr = "xxxx@";
+        vals = dateStr.split("@");
+        Arrays.stream(vals).forEach(System.out::println);
     }
 
     @Test

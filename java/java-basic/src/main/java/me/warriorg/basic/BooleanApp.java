@@ -4,8 +4,8 @@ public class BooleanApp {
 
     public static void main(String[] args) {
         Boolean b = null;
-        if (!b) {
-            System.out.println("");
+        if (Boolean.FALSE.equals(b)) {
+            System.out.println("sdfsd");
         }
 
     }
