@@ -6,9 +6,12 @@ import java.util.List;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import me.warriorg.vo.ExtendableBean;
 import me.warriorg.vo.TestVO;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class JacksonTest {
@@ -24,6 +27,34 @@ class JacksonTest {
         JsonNode actualObj = mapper.readTree(jsonString);
 
         assertNotNull(actualObj);
+    }
+
+    @Test
+    void whenSerializingUsingJsonAnyGetter_thenCorrect()
+            throws JsonProcessingException {
+
+        ExtendableBean bean = new ExtendableBean("My bean");
+        bean.add("attr1", "val1");
+        bean.add("attr2", "val2");
+
+        String result = new ObjectMapper().writeValueAsString(bean);
+
+        Assertions.assertTrue(result.contains("attr1"));
+        Assertions.assertTrue(result.contains("val1"));
+    }
+
+    @Test
+    void whenDeserializingUsingJsonAnySetter_thenCorrect()
+            throws IOException {
+        String json
+                = "{\"name\":\"My bean\",\"attr2\":\"val2\",\"attr1\":\"val1\"}";
+
+        ExtendableBean bean = new ObjectMapper()
+                .readerFor(ExtendableBean.class)
+                .readValue(json);
+
+        assertEquals("My bean", bean.name);
+        assertEquals("val2", bean.getProperties().get("attr2"));
     }
 
     @Test
