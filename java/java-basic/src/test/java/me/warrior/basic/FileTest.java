@@ -15,6 +15,7 @@ public class FileTest {
     public void wirte() throws IOException {
         byte[] body = new byte[0];
         String filename = "//Users/warriorg/Downloads/ss222wwww2dsssssssdddf/xxxds222fsdfs/xxxx.txt";
+        File file = new File("/Users/warriorg/Downloads/");
 
         Path path = Path.of(filename);
         try {

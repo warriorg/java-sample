@@ -17,5 +17,7 @@ public class LocalDateTest {
 
         LocalDate ld = LocalDate.of(2020, 10, 12);
         Assertions.assertTrue(LocalDate.now().isAfter(ld));
+
+        System.out.println(LocalDate.parse("2024-02-12"));
     }
 }

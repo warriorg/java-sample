@@ -3,6 +3,9 @@ package me.warrior.basic;
 import org.junit.jupiter.api.Test;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -18,8 +21,17 @@ public class DateTest {
     }
 
     @Test
+    void testLocalDate() {
+        System.out.println(LocalDate.now());
+    }
+
+    @Test
     public void getTimeTest() {
        System.out.println(System.currentTimeMillis());
 
+       long time = System.currentTimeMillis();
+       time = time + 1000 * 60 * 60 * 24 * 60;
+       System.out.println(time + 1000L * 60 * 60 * 24 * 60);
+       System.out.println(new Date(time + 1000L * 60 * 60 * 24 * 60));
     }
 }

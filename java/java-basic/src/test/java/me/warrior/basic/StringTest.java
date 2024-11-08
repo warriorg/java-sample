@@ -42,12 +42,21 @@ public class StringTest {
     }
 
     @Test
-    public void substringTest() {
+    void substringTest() {
+        System.out.println("xxxxx:" + "888\n\r666".length());
         System.out.println("913205940662962116".substring(8, 17));
+        System.out.println("2024-09-10".substring(0, 7));
     }
 
     @Test
-    public void splitTest() {
+    void length() {
+        System.out.println("xxxxx:" + "888\n\r666".length());
+        System.out.println("888\n\r666".length() + "");
+    }
+
+    @Test
+    void splitTest() {
+
         String testStr = "142 中国";
         String[] vals = testStr.split("\\s");
         System.out.println(vals[0]);
@@ -60,6 +69,12 @@ public class StringTest {
         dateStr = "xxxx@";
         vals = dateStr.split("@");
         Arrays.stream(vals).forEach(System.out::println);
+
+        String[] combinationVal = "xxxx bbbb cccc".split("\\s", 2);
+        Assertions.assertEquals("xxxx", combinationVal[0]);
+        Assertions.assertEquals("bbbb cccc", combinationVal[1]);
+
+
     }
 
     @Test

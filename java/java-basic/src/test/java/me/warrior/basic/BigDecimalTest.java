@@ -15,8 +15,9 @@ public class BigDecimalTest {
         System.out.println(b1);
         Assertions.assertEquals(b1, new BigDecimal("12.23"));
 
-        DecimalFormat df = new DecimalFormat("0.0000");
+        DecimalFormat df = new DecimalFormat("0.00");
         System.out.println(df.format(new BigDecimal("0.01035")));
+        System.out.println(new BigDecimal("0.1035").setScale(2, RoundingMode.HALF_UP).toPlainString());
     }
 
     @Test
@@ -61,6 +62,16 @@ public class BigDecimalTest {
 
     public void refence(BigDecimal[] val) {
         val[0] = val[0].subtract(new BigDecimal("10"));
+    }
+
+
+    @Test
+    public void cellingTest() {
+        BigDecimal value = new BigDecimal("11");
+        int count = value.multiply(new BigDecimal("6.48978")).divide(new BigDecimal("100") ,  RoundingMode.CEILING)
+                .setScale(0, RoundingMode.CEILING)
+                .intValue();
+        System.out.println(count);
     }
 
 }
