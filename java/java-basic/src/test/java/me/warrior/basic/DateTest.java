@@ -26,6 +26,17 @@ public class DateTest {
     }
 
     @Test
+    void addDaysTest() {
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        c.add(5, -0);
+        Date t =  c.getTime();
+
+
+        System.out.println(t);
+    }
+
+    @Test
     public void getTimeTest() {
        System.out.println(System.currentTimeMillis());
 
