@@ -1,8 +1,19 @@
 
+plugins {
+    id "me.champeau.jmh" version "0.6.8"
+}
+
 dependencies {
+    implementation 'cn.hutool:hutool-all:5.8.33'
+    implementation 'cglib:cglib:3.3.0'
+
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation "org.junit.jupiter:junit-jupiter-api"
+    testImplementation 'org.openjdk.jmh:jmh-core:1.36'
+    testImplementation 'org.openjdk.jmh:jmh-generator-annprocess:1.36'
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
+
+    testAnnotationProcessor 'org.openjdk.jmh:jmh-generator-annprocess:1.36'
 }
 
 test {
